@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Автосервис | Главная</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="fixed-header">
+      <h1>
+        Обслуживание и ремонт отечественных и иностранных автомобилей с 8:00 до
+        20:00, ежедневно 
+      </h1>
+      
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="services.html">Услуги</a></li>
+
+          <li><a href="map.html">Схема проезда</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <main>
+      <div class="container fade-in">
+        <h1 class="page-title">Добро пожаловать в наш <a href="https://maps.app.goo.gl/N3rRTZi6kSwKGAV16">автосервис</a>!</h1>
+
+        <section>
+          <h2>Профессиональный ремонт и обслуживание</h2>
+          <p>
+            Наш автосервис предлагает полный спектр услуг по ремонту и
+            техническому обслуживанию автомобилей отечественного и иностранного
+            производства. Опытные мастера, современное оборудование, гарантия
+            качества.
+          </p>
+
+          <div class="photo-gallery del_obj">
+            <div class="car-photo">
+              <img
+                src="https://images.unsplash.com/photo-1568605117036-5fe5e7fa0ac7?w=300&h=200&fit=crop"
+                alt="Mercedes в сервисе"
+              />
+              <p>Mercedes — европейский премиум-класс</p>
+            </div>
+            <div class="car-photo">
+              <img
+                src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=300&h=200&fit=crop"
+                alt="Volkswagen в сервисе"
+              />
+              <p>Volkswagen — немецкое качество</p>
+            </div>
+            <div class="car-photo">
+              <img
+                src="https://images.unsplash.com/photo-1609794523757-bcea34b9fc27?w=300&h=200&fit=crop"
+                alt="Lada в сервисе"
+              />
+              <p>Lada — надёжные отечественные авто</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="backfon">
+          <h2>Наши услуги и цены</h2>
+          <table class="services-table">
+            <thead>
+              <tr>
+                <th>Услуга</th>
+                <th>Стоимость</th>
+                <th>Примечание</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Компьютерная диагностика</td>
+                <td>1 000 ₽</td>
+                <td>Полная проверка всех систем</td>
+              </tr>
+              <tr>
+                <td>Замена масла (двигатель)</td>
+                <td>1 500 ₽</td>
+                <td>Масло и фильтр оплачиваются отдельно</td>
+              </tr>
+              <tr>
+                <td>Замена масла (АКПП)</td>
+                <td>2 500 ₽</td>
+                <td>С частичной заменой</td>
+              </tr>
+              <tr>
+                <td>Замена тормозных колодок</td>
+                <td>1 200 ₽</td>
+                <td>За ось</td>
+              </tr>
+              <tr>
+                <td>Замена ремня ГРМ</td>
+                <td>3 500 ₽</td>
+                <td>В зависимости от модели</td>
+              </tr>
+              <tr>
+                <td>Ремонт ходовой части</td>
+                <td>от 2 000 ₽</td>
+                <td>Точная цена после диагностики</td>
+              </tr>
+              <tr>
+                <td>Шиномонтаж</td>
+                <td>от 1 500 ₽</td>
+                <td>За 4 колеса</td>
+              </tr>
+              <tr>
+                <td>Регулировка развал-схождения</td>
+                <td>1 800 ₽</td>
+                <td>На стенде 3D</td>
+              </tr>
+              <tr>
+                <td>Ремонт двигателя</td>
+                <td>от 10 000 ₽</td>
+                <td>По согласованию</td>
+              </tr>
+              <tr>
+                <td>Замена охлаждающей жидкости</td>
+                <td>800 ₽</td>
+                <td>Без стоимости антифриза</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            * Цены указаны за работу. Расходные материалы оплачиваются отдельно.
+            Для постоянных клиентов — скидка 10%.
+          </p>
+        </section>
+
+        <section>
+          <h2>Быстрая запись<i> доступно если настроена почта </i></h2>
+          <form id="mainBookingForm">
+            <div class="form-group">
+              <label for="main_name">Ваше имя *</label>
+              <input type="text" id="main_name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="main_phone">Телефон *</label>
+              <input
+                type="tel"
+                id="main_phone"
+                name="phone"
+                placeholder="+7(999) 999-99-99"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="main_date">Желаемая дата *</label>
+              <input type="date" id="main_date" name="date" required />
+              <script>
+                const input = document.getElementById('main_date');
+                const tomorrow = new Date();
+                tomorrow.setDate(tomorrow.getDate() );
+
+                const yyyy = tomorrow.getFullYear();
+                const mm = String(tomorrow.getMonth() + 1).padStart(2, '0');
+                const dd = String(tomorrow.getDate()+1).padStart(2, '0');
+
+                const minDate = `${yyyy}-${mm}-${dd}`;
+                input.min = minDate;   // не раньше завтрашней
+                // опционально сразу подставить завтра
+                input.value = minDate;
+
+                
+              </script>
+            </div>
+            <button type="submit" class="btn">Отправить заявку на почту</button>
+          </form>
+        </section>
+
+        <section>
+          <h2>Почему выбирают нас?</h2>
+          <ul style="margin-left: 30px; line-height: 1.8">
+            <li>✓ Опытные мастера со стажем от 5 лет</li>
+            <li>✓ Современное диагностическое оборудование</li>
+            <li>✓ Гарантия на все виды работ до 1 года</li>
+            <li>✓ Прозрачные цены без скрытых платежей</li>
+            <li>✓ Работаем с 8:00 до 20:00</li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <p>© Автосервис | Татарстан, г. Бавлы, ул. С.Сайдашева 162А</p>
+      <p>
+        Телефоны: <a href="tel:+79375817104">+7 (937) 581-71-04 (Марат)</a> |
+        <a href="tel:+79178984424">+7 (917) 898-44-24 (Азат)</a>
+      </p>
+      <p>
+        Email для заявок: <a href="mailto:faskhiev88@mail.ru">faskhiev88@mail.ru</a>
+      </p>
+      <p>Режим работы: Пн-Пт с 8:00 до 20:00</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

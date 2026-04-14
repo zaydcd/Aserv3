@@ -1,0 +1,681 @@
+/* ============================================
+   АВТОСЕРВИС - ОСНОВНЫЕ СТИЛИ
+   Подключение: поместить в одной папке с HTML файлами
+   Структура: /css/style.css
+   Используемые шрифты: Google Fonts Roboto
+   ============================================ */
+
+/* Подключение Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+/* Reset и базовые настройки */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #ffffff;
+  line-height: 1.6;
+  background-image: url("img/ФонСервиса.jpeg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  position: relative;
+  min-height: 100vh;
+}
+
+
+/* Специальный стиль для index.html с параллаксом */
+body.parallax-body {
+  background-image: none;
+  background-color: #1a1a1a;
+}
+
+body.parallax-body::before {
+  display: none;
+}
+
+/* Параллакс-секции для главной страницы */
+.parallax-section {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.parallax-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+  z-index: 1;
+}
+
+.parallax-section .parallax-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 60px 20px;
+  width: 100%;
+}
+
+/* Секция 1 - Фон с автосервисом */
+.parallax-1 {
+  background-image: url("../img/ФонСервиса.jpeg");
+  min-height: 500px;
+}
+
+/* Секция 2 - Дополнительный параллакс (можно заменить) */
+.parallax-2 {
+  background-image: url("https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=1920&h=600&fit=crop");
+  min-height: 400px;
+}
+
+/* Секция 3 - Ещё один параллакс */
+.parallax-3 {
+  background-image: url("https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=1920&h=600&fit=crop");
+  min-height: 400px;
+}
+
+/* Контент внутри параллакс-секций */
+.parallax-title {
+  font-size: 3rem;
+  color: #ffd700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+
+.parallax-text {
+  font-size: 1.3rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.backfon {
+  position: relative;
+  z-index: 1;
+  padding: 50px;
+}
+.backfon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("../img/ФонСервиса.jpeg") center/cover no-repeat;
+  opacity: 0.5; /* степень бледности */
+  z-index: -1;
+}
+/* Обычные секции */
+.normal-section {
+  background: rgba(0, 0, 0, 0.85);
+  padding: 60px 20px;
+  position: relative;
+}
+
+.normal-section .container {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+/* Overlay для обычного body (не параллакс) */
+body:not(.parallax-body)::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65));
+  z-index: -1;
+}
+
+/* Фиксированный заголовок */
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  padding: 15px 0 10px 0;
+}
+
+.fixed-header h1 {
+  font-size: clamp(0.9rem, 4vw, 1.3rem);
+  text-align: center;
+  color: #ffd700;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 0 15px;
+}
+
+/* Навигация */
+nav {
+  margin-top: 5px;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 10px;
+  padding: 5px 20px;
+  flex-wrap: wrap;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.nav-menu li a:link {
+  color: #007bff;
+}
+
+.nav-menu li a:visited {
+  color: #6f42c1;
+}
+
+.nav-menu li a:hover {
+  text-decoration: underline;
+  transform: scale(1.05);
+  color: #ffd700;
+}
+
+/* Гамбургер-меню (скрыто на десктопе) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 10px;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}
+
+.menu-toggle span {
+  width: 30px;
+  height: 3px;
+  background: white;
+  margin: 3px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* Основной контент (отступ под фиксированный хедер) */
+main {
+  padding-top: 130px;
+  min-height: calc(100vh - 200px);
+}
+
+/* Для параллакс страницы отступ меняется */
+body.parallax-body main {
+  padding-top: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  backdrop-filter: blur(4px);
+}
+
+/* Стили для страниц */
+.page-title {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #ffd700;
+  border-bottom: 2px solid #ffd700;
+  display: inline-block;
+  width: auto;
+  padding-bottom: 10px;
+}
+h1 {
+  text-align: center;
+}
+h2 {
+  color: #ffd700;
+  margin: 25px 0 15px 0;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+h3 {
+  color: #fff;
+  margin: 10px 0 10px 0;
+  font-size: 1.4rem;
+}
+
+/* Галерея фото на главной */
+.photo-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.car-photo {
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 15px;
+  transition: transform 0.3s;
+}
+
+.car-photo:hover {
+  transform: translateY(-5px);
+}
+
+.car-photo img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.car-photo p {
+  margin-top: 10px;
+  font-weight: 500;
+}
+.cars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+.cars img {
+  width: 180px;
+  height: 120px;
+  object-fit: cover;
+  border: 2px solid #fff;
+  border-radius: 8px;
+}
+.izKazany:hover {
+  transform: scale(5);
+  position: absolute;
+  top: -250px;
+}
+/* Формы */
+.form-group {
+  margin-bottom: 10px 20PX;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid #ffd700;
+  background: white;
+}
+
+.btn {
+  background: #007bff;
+  color: white;
+  padding: 12px 30px;
+  margin-left: 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #0056b3;
+  transform: scale(1.02);
+}
+
+/* Таблица услуг */
+.services-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.services-table th,
+.services-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.services-table th {
+  background: #ffd700;
+  color: #000;
+  font-weight: 700;
+}
+
+.services-table tr:hover {
+  background: rgba(255, 215, 0, 0.2);
+}
+
+/* Контакты */
+.contact-info {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+.contact-info p {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+.contact-info a {
+  color: #ffd700;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact-info a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Карта */
+.map-container {
+  margin: 30px 0;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 450px;
+  border: 0;
+}
+
+/* Footer */
+footer {
+  background: rgba(0, 0, 0, 0.9);
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+footer a {
+  color: #ffd700;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+/* удалить объект*/
+.del_obj {
+  display: none;
+}
+/* Анимации при скролле (subtle fade-in) */
+.fade-in {
+  opacity: 1;
+  transform: translateY(20px);
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+}
+
+.fade-in.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Уведомления */
+.notification {
+  position: fixed;
+  top: 150px;
+  right: 20px;
+  padding: 15px 25px;
+  background: #28a745;
+  color: white;
+  border-radius: 8px;
+  z-index: 2000;
+  animation: slideIn 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.notification.error {
+  background: #dc3545;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+  .container {
+    margin: 0 15px;
+  }
+  .btn{
+    margin-left: 10px;
+  };
+  .page-title {
+    font-size: 1.8rem;
+    text-align: center;
+    
+  }
+
+  .parallax-section {
+    background-attachment: scroll;
+    min-height: 300px;
+  }
+
+  .parallax-title {
+    font-size: 2rem;
+  }
+
+  .parallax-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    padding-top: 110px;
+  }
+  .btn{
+    margin-left: 5px;
+  };
+  body.parallax-body main {
+    padding-top: 100px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+  
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    gap: 0;
+    background: rgba(0, 0, 0, 0.95);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 0;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-menu li {
+    width: 100%;
+  }
+
+  .nav-menu li a {
+    display: block;
+    padding: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .fixed-header h1 {
+    font-size: 0.85rem;
+    padding-right: 60px;
+    text-align: left;
+    padding-left: 15px;
+  }
+
+  .photo-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .car-photo {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .services-table th,
+  .services-table td {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .map-container iframe {
+    height: 300px;
+  }
+
+  .notification {
+    top: 120px;
+    right: 10px;
+    left: 10px;
+    text-align: center;
+  }
+
+  .parallax-section {
+    min-height: 250px;
+  }
+
+  .parallax-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding-top: 100px;
+  }
+  .btn{
+    margin-left: 1px;
+  };
+  .fixed-header h1 {
+    font-size: 0.7rem;
+    line-height: 1.3;
+  }
+
+  .container {
+    padding: 15px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .services-table {
+    font-size: 0.8rem;
+  }
+
+  .services-table th,
+  .services-table td {
+    padding: 6px 8px;
+  }
+
+  input,
+  textarea {
+    font-size: 0.9rem;
+  }
+
+  .parallax-section {
+    min-height: 200px;
+  }
+
+  .parallax-title {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .fixed-header h1 {
+    font-size: 0.6rem;
+    padding-right: 50px;
+  }
+
+  .page-title {
+    font-size: 1.2rem;
+  }
+}

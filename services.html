@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Автосервис | Запись онлайн</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="fixed-header">
+      <h1>
+        Обслуживание и ремонт отечественных и иностранных автомобилей с 8:00 до
+        20:00, ежедневно
+      </h1>
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="services.html">Услуги</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+          <li><a href="map.html">Схема проезда</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <main>
+      <div class="container fade-in">
+        <h1 class="page-title">Запись на обслуживание</h1>
+
+        <section>
+          <h2>Онлайн-запись в автосервис</h2>
+          <p>
+            Заполните форму, и наш администратор свяжется с вами для
+            подтверждения времени записи. Заявки отправляются на
+            <strong>zayd@rambler.ru</strong>. Мы работаем с 8:00 до 20:00 с
+            понедельника по пятницу. <strong></strong><mark>Используйте если настроена ваша почта.</mark></strong>
+          </p>
+
+          <form id="bookingForm" method="post" style="margin-top: 30px">
+            <div class="form-group">
+              <label for="name">Ваше имя *</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Телефон *</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="+7(999) 999-99-99"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email (для подтверждения)</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="example@mail.ru"
+              />
+              <small style="color: #ccc"
+                >Укажите email, чтобы получить подтверждение записи</small
+              >
+            </div>
+            <div class="form-group">
+              <label for="car">Марка и модель автомобиля *</label>
+              <input
+                type="text"
+                id="car"
+                name="car"
+                placeholder="Например: Toyota Camry 2020"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="service">Необходимая услуга</label>
+              <select id="service" name="service">
+                <option value="">Выберите услугу</option>
+                <option value="diagnostika">
+                  Компьютерная диагностика - 1 000 ₽
+                </option>
+                <option value="oil_change">Замена масла - 1 500 ₽</option>
+                <option value="brake_pads">
+                  Замена тормозных колодок - 1 200 ₽
+                </option>
+                <option value="timing_belt">Замена ремня ГРМ - 3 500 ₽</option>
+                <option value="suspension">
+                  Ремонт ходовой части - от 2 000 ₽
+                </option>
+                <option value="tires">Шиномонтаж - от 1 500 ₽</option>
+                <option value="alignment">Развал-схождение - 1 800 ₽</option>
+                <option value="engine">Ремонт двигателя - от 10 000 ₽</option>
+                <option value="other">Другое (укажите в комментарии)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="date">Желаемая дата *</label>
+              <input type="date" id="date" name="date" required />
+              <script>
+                const input = document.getElementById('date');
+                const tomorrow = new Date();
+                tomorrow.setDate(tomorrow.getDate() + 1);
+
+                const yyyy = tomorrow.getFullYear();
+                const mm = String(tomorrow.getMonth() + 1).padStart(2, '0');
+                const dd = String(tomorrow.getDate()).padStart(2, '0');
+
+                const minDate = `${yyyy}-${mm}-${dd}`;
+                input.min = minDate;   // не раньше завтрашней
+                // опционально сразу подставить завтра
+                input.value = minDate;
+              </script>
+            </div>
+            <div class="form-group">
+              <label for="time">Желаемое время</label>
+              <select id="time" name="time">
+                <option value="">Выберите время</option>
+                <option value="8:00">8:00 - 9:00</option>
+                <option value="9:00">9:00 - 10:00</option>
+                <option value="10:00">10:00 - 11:00</option>
+                <option value="11:00">11:00 - 12:00</option>
+                <option value="12:00">12:00 - 13:00</option>
+                <option value="13:00">13:00 - 14:00</option>
+                <option value="14:00">14:00 - 15:00</option>
+                <option value="15:00">15:00 - 16:00</option>
+                <option value="16:00">16:00 - 17:00</option>
+                <option value="17:00">17:00 - 18:00</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="comment">Комментарий</label>
+              <textarea
+                id="comment"
+                name="comment"
+                rows="3"
+                placeholder="Дополнительная информация о проблеме или пожелания"
+              ></textarea>
+            </div>
+            <button type="submit" class="btn">Отправить заявку на почту</button>
+          </form>
+        </section>
+
+        <section style="margin-top: 40px">
+          <h2>Преимущества предварительной записи</h2>
+          <ul style="margin-left: 30px; line-height: 1.8">
+            <li>✓ Без ожидания в очереди</li>
+            <li>✓ Выбор удобного времени</li>
+            <li>✓ Скидка 5% при онлайн-записи</li>
+            <li>✓ Персональный мастер</li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <p>© Автосервис | Татарстан, г. Бавлы, ул. С.Сайдашева 162А</p>
+      <p>
+        Телефоны: <a href="tel:+79375817104">+7 (937) 581-71-04 (Марат)</a> |
+        <a href="tel:+79178984424">+7 (917) 898-44-24 (Азат)</a>
+      </p>
+      <p>
+        Email для заявок: <a href="mailto:fackhiev88@mail.ru">fackhiev88@mail.ru</a>
+      </p>
+      <p>Режим работы: Пн-Пт с 8:00 до 20:00</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

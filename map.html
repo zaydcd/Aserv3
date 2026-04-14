@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Автосервис | Схема проезда</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="fixed-header">
+      <h1>
+        Обслуживание и ремонт отечественных и иностранных автомобилей с 8:00 до
+        20:00, ежедневно
+      </h1>
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="services.html">Услуги</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+          <li><a href="map.html">Схема проезда</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <main>
+      <div class="container">
+        <h1 class="page-title">Схема проезда</h1>
+
+        <div class="map-container">
+          <iframe
+            src="https://yandex.ru/map-widget/v1/?um=constructor%3A76b102c78020fafb205d672d94b0b2f1384bfd9d47684ed04b195a48e4f5dfab&amp;source=constructor"
+            allowfullscreen
+            width="1280"
+            height="720"
+            frameborder="0"
+          ></iframe>
+        </div>
+
+        <section>
+          <h2>Как добраться</h2>
+          <ul style="margin-left: 30px; line-height: 1.8">
+            <li>
+              <strong>Ориентир:</strong> Рядом с кафе "Чайхана" и АЗС
+              "Татнефть".
+            </li>
+          </ul>
+          <div class="car-photo">
+            <img src="img/tatblizko.jpg" alt="izKazani" class="izKazany" />
+            <img src="img/tatDaleko.jpg" alt="izKazani" class="izKazany" />
+          </div>
+          <div
+            style="
+              margin-top: 20px;
+              padding: 15px;
+              background: rgba(0, 0, 0, 0.5);
+              border-radius: 10px;
+            "
+          >
+            <p>
+              ♿ <strong>Доступность:</strong> Есть пандус для маломобильных
+              групп населения.
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <p>© Автосервис | Татарстан, г. Бавлы, ул. С.Сайдашева 162А</p>
+      <p>Телефон: +7 (800) 000-00-00 | Email: info@avtoservis.ru</p>
+      <p>Режим работы: Пн-Пт с 8:00 до 20:00</p>
+    </footer>
+
+    <script>
+      const menuToggle = document.getElementById("menuToggle");
+      const navMenu = document.getElementById("navMenu");
+      menuToggle.addEventListener("click", () =>
+        navMenu.classList.toggle("active"),
+      );
+      document.querySelectorAll(".nav-menu a").forEach((link) => {
+        link.addEventListener("click", () =>
+          navMenu.classList.remove("active"),
+        );
+      });
+    </script>
+  </body>
+</html>
