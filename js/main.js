@@ -337,11 +337,7 @@ function initContactLinks() {
   });
 }
 
-//Открыть карту
-document.getElementById('linkMap').onclick = function() {
-        myMap.setCenter([59.93, 30.33], 12); // Санкт-Петербург
-        myPlacemark.geometry.setCoordinates([59.93, 30.33]);
-    };
+
     
 // Запуск при загрузке страницы
 document.addEventListener("DOMContentLoaded", function () {
@@ -352,3 +348,8 @@ document.addEventListener("DOMContentLoaded", function () {
   initContactLinks();
 });
 
+//Открыть карту
+document.getElementById('linkMap').onclick = function() {
+        myMap.setCenter([59.93, 30.33], 12); // Санкт-Петербург
+        myPlacemark.geometry.setCoordinates([59.93, 30.33]);
+    };
