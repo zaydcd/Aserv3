@@ -28,80 +28,7 @@ body {
 }
 
 
-/* Специальный стиль для index.html с параллаксом */
-body.parallax-body {
-  background-image: none;
-  background-color: #1a1a1a;
-}
 
-body.parallax-body::before {
-  display: none;
-}
-
-/* Параллакс-секции для главной страницы */
-.parallax-section {
-  position: relative;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-}
-
-.parallax-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
-  z-index: 1;
-}
-
-.parallax-section .parallax-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  padding: 60px 20px;
-  width: 100%;
-}
-
-/* Секция 1 - Фон с автосервисом */
-.parallax-1 {
-  background-image: url("../img/ФонСервиса.jpeg");
-  min-height: 500px;
-}
-
-/* Секция 2 - Дополнительный параллакс (можно заменить) */
-.parallax-2 {
-  background-image: url("https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=1920&h=600&fit=crop");
-  min-height: 400px;
-}
-
-/* Секция 3 - Ещё один параллакс */
-.parallax-3 {
-  background-image: url("https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=1920&h=600&fit=crop");
-  min-height: 400px;
-}
-
-/* Контент внутри параллакс-секций */
-.parallax-title {
-  font-size: 3rem;
-  color: #ffd700;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  margin-bottom: 20px;
-}
-
-.parallax-text {
-  font-size: 1.3rem;
-  max-width: 800px;
-  margin: 0 auto;
-}
 
 .backfon {
   position: relative;
@@ -129,18 +56,6 @@ body.parallax-body::before {
 .normal-section .container {
   background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(4px);
-}
-
-/* Overlay для обычного body (не параллакс) */
-body:not(.parallax-body)::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65));
-  z-index: -1;
 }
 
 /* Фиксированный заголовок */
@@ -182,20 +97,20 @@ nav {
 
 .nav-menu li a {
   text-decoration: none;
-  color: #007bff;
+  color: #89dd28;
   font-weight: 500;
   font-size: 1.1rem;
-  padding: 8px 12px;
+  padding: 5px 12px;
   transition: all 0.3s ease;
   display: inline-block;
 }
 
 .nav-menu li a:link {
-  color: #007bff;
+  color: #229a9e;
 }
 
 .nav-menu li a:visited {
-  color: #6f42c1;
+  color: #50dd26;
 }
 
 .nav-menu li a:hover {
@@ -246,7 +161,7 @@ body.parallax-body main {
 
 /* Стили для страниц */
 .page-title {
-  font-size: 2.2rem;
+  font-size: 2.0rem;
   margin-bottom: 10px;
   text-align: center;
   color: #ffd700;
@@ -270,7 +185,17 @@ h3 {
   margin: 10px 0 10px 0;
   font-size: 1.4rem;
 }
+a {
+  color: #95b81a;
+}
+p a {
+  background: #0654a8;
+  color: #fff;
+}
 
+a:hover {
+  background: #28a745;
+}
 /* Галерея фото на главной */
 .photo-gallery {
   display: flex;
@@ -357,7 +282,7 @@ textarea:focus {
   background: #007bff;
   color: white;
   padding: 12px 30px;
-  margin-left: 5px;
+  margin-left: 10px;
   border: none;
   border-radius: 8px;
   font-size: 1rem;
@@ -457,6 +382,7 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
+
 /* удалить объект*/
 .del_obj {
   display: none;
@@ -510,10 +436,10 @@ footer a:hover {
     margin: 0 15px;
   }
   .btn{
-    margin-left: 60px;
+    margin-left: 6px;
   };
   .page-title {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     text-align: center;
     
   }
@@ -568,7 +494,7 @@ footer a:hover {
 
   .nav-menu li a {
     display: block;
-    padding: 12px;
+    padding: 5px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
@@ -596,7 +522,7 @@ footer a:hover {
   }
 
   .page-title {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
   }
 
   h2 {
@@ -672,6 +598,93 @@ footer a:hover {
   }
 
   .page-title {
-    font-size: 1.2rem;
+    font-size: 1.0rem;
   }
 }
+
+/* Специальный стиль для index.html с параллаксом */
+body.parallax-body {
+  background-image: none;
+  background-color: #1a1a1a;
+}
+
+body.parallax-body::before {
+  display: none;
+}
+
+/* Параллакс-секции для главной страницы */
+.parallax-section {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.parallax-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+  z-index: 1;
+}
+
+.parallax-section .parallax-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 60px 20px;
+  width: 100%;
+}
+
+/* Секция 1 - Фон с автосервисом */
+.parallax-1 {
+  background-image: url("../img/ФонСервиса.jpeg");
+  min-height: 500px;
+}
+
+/* Секция 2 - Дополнительный параллакс (можно заменить) */
+.parallax-2 {
+  background-image: url("https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=1920&h=600&fit=crop");
+  min-height: 400px;
+}
+
+/* Секция 3 - Ещё один параллакс */
+.parallax-3 {
+  background-image: url("https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=1920&h=600&fit=crop");
+  min-height: 400px;
+}
+
+/* Контент внутри параллакс-секций */
+.parallax-title {
+  font-size: 3rem;
+  color: #ffd700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+
+.parallax-text {
+  font-size: 1.3rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+/* Overlay для обычного body (не параллакс) */
+body:not(.parallax-body)::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65));
+  z-index: -1;
+}
+
